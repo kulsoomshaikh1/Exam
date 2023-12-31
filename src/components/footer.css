@@ -1,0 +1,21 @@
+footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+footer h5 {
+    color: #fff; /* White text for headings */
+}
+
+footer a.text-white:hover {
+    color: #17a2b8; /* Change color on hover */
+}
+
+footer .list-group-item {
+    background-color: #000; /* Black background */
+    border: none; /* Remove border */
+}
+
+footer .list-group-item:hover {
+    background-color: #333; /* Darker background on hover */
+}

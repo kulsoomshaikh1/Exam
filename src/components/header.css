@@ -1,0 +1,45 @@
+/* Custom styles for the navbar and its elements */
+
+.navbar {
+    background-color: #000; /* Black background */
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto; /* Ensures the image scales correctly */
+}
+
+.navDirection {
+    justify-content: flex-start; /* Aligns nav items to the left */
+}
+
+.nav-link {
+    color: #fff !important; /* White text */
+    margin-right: 15px; /* Right margin for spacing */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+    color: #17a2b8 !important; /* Change color on hover */
+}
+
+.btn-outline-info {
+    color: #17a2b8; /* Button text color */
+    border-color: #17a2b8; /* Button border color */
+}
+
+.btn-outline-info:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #17a2b8; /* Button background color on hover */
+    border-color: #17a2b8; /* Button border color on hover */
+}
+
+/* Responsive adjustments as needed */
+@media (max-width: 992px) {
+    .navbar-nav {
+        margin-top: 20px;
+    }
+}
+.brdr{
+    border-radius: 100px;
+}

@@ -1,0 +1,42 @@
+.HeroSection {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-text h1 {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.overlay-text strong {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.txt-size, h1{
+    font-size: 7rem!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.buy-word{
+    font-size: 7rem!important;
+    color: white!important;
+}
+
+.blurry-img{
+    filter: blur(3px);
+
+}
+

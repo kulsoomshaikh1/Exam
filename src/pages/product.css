@@ -1,0 +1,57 @@
+.product-card {
+    height: 100%; /* Makes all cards equal height */
+    display: flex;
+    flex-direction: column; /* Organizes content in a column */
+}
+
+.product-img {
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures the image covers the area properly */
+}
+
+.product-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines after which text is truncated */
+    -webkit-box-orient: vertical;
+    height: 72px; /* Adjust height based on line-clamp and line-height */
+}
+
+/* product.css */
+
+/* Modal styling */
+.modal-content {
+    background-color: black; /* Black background for the modal */
+    color: white; /* White text */
+}
+
+/* Styling for buttons within the modal */
+.modal-content .btn {
+    color: white; /* White text for buttons */
+    border-color: white; /* White border for buttons */
+}
+
+.modal-content .btn-secondary {
+    background-color: black; /* Black background for secondary buttons */
+}
+
+.modal-content .btn-primary {
+    background-color: white; /* White background for primary buttons */
+    color: black; /* Black text for primary buttons */
+}
+
+/* Additional styling for quantity controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spacing between buttons and quantity display */
+}
+
+.quantity-value {
+    color: white; /* Ensure the quantity value is white */
+}
+
+
+
+
