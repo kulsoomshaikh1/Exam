@@ -2,14 +2,14 @@ import React from 'react';
 import {Navbar, Nav, Container, Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Cart as CartIcon } from 'react-bootstrap-icons';
-import logoImg from '../assets/images/fakestore-logo.png'
+import logo from '../assets/images/logo.png'
 
 const Header = ({ cartItemCount }) => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand href="/">
-                    <Image src={logoImg} alt="Fake Store Logo" height={70} width={70} roundedCircle/>
+                    <Image src={logo} alt="Fake Store Logo" height={70} width={70} roundedCircle/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
