@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import aboutImg from '../assets/images/about-img.png'
-import saudImg from '../assets/images/saudImg.jpeg'
+import pic from '../assets/images/pic.jpg'
 
 const About = () => {
     return (
