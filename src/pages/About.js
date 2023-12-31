@@ -20,7 +20,7 @@ const About = () => {
                     </p>
                     <p>
                         Sincerely,<br />
-                        Saud Ahmed Chachar
+                        Kulsoom shaikh
                     </p>
                 </Col>
             </Row>
@@ -30,9 +30,9 @@ const About = () => {
                 {/* Team members cards */}
                 <Col md={4}>
                     <Card>
-                        <Card.Img variant="top" src={saudImg} />
+                        <Card.Img variant="top" src={pic} />
                         <Card.Body>
-                            <Card.Title>Saud Ahmed </Card.Title>
+                            <Card.Title>kulsoom shaikh </Card.Title>
                             <Card.Text>
                               The full stake enterprise application developer
                             </Card.Text>
