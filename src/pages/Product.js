@@ -63,6 +63,8 @@ function Product({ setCartItems }) {
                                 <Card.Text className="product-description">
                                     {product.description}
                                 </Card.Text>
+                                <h2> shirt</h2><br/>
+                                <h2> $29.0</h2>
                                 <Button variant="dark" onClick={() => handleShowModal(product)}>Add to Cart</Button>
                             </Card.Body>
                         </Card>

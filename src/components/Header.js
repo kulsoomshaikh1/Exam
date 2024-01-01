@@ -7,7 +7,7 @@ const Header = () => {
     <nav className="navbar">
       <div>
         <a href="#" className="company-name">
-          Grace Company
+          Grace
         </a>
       </div>
       <div>
@@ -22,6 +22,7 @@ const Header = () => {
         </a>
       </div>
     </nav>
+
   );
 };
 
