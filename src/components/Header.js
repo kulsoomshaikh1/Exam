@@ -1,48 +1,30 @@
+// Navbar.js
 import React from 'react';
-import {Navbar, Nav, Container, Image} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { Cart as CartIcon } from 'react-bootstrap-icons';
-import logo from '../assets/images/logo.png'
+import './header.css';
+import { Header } from 'react-bootstrap/lib/Modal';
 
-const Header = ({ cartItemCount }) => {
-    return (
-        <Navbar bg="dark" variant="dark" expand="lg">
-            <Container>
-                <Navbar.Brand href="/">
-                    <Image src={logo} alt="Fake Store Logo" height={70} width={70} roundedCircle/>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Link to="/" className="nav-link">Home</Link>
-                        <Link to="/product" className="nav-link">Product</Link>
-                        <Link to="/about" className="nav-link">About</Link>
-                        <Link to="/contact" className="nav-link">Contact</Link>
-                        <Link to="/cart" className="nav-link position-relative">
-                            <CartIcon color="white" size={30} />
-                            {cartItemCount > 0 && (
-                                <span style={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    right: 0,
-                                    backgroundColor: 'red',
-                                    color: 'white',
-                                    borderRadius: '50%',
-                                    padding: '2px 6px',
-                                    fontSize: '12px',
-                                    lineHeight: '12px',
-                                    minWidth: '20px',
-                                    textAlign: 'center'
-                                }}>
-                                    {cartItemCount}
-                                </span>
-                            )}
-                        </Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    );
+const header = () => {
+  return (
+    <nav className="navbar">
+      <div className="left-section">
+        <span className="company-name">Grace</span>
+        <a href="#" className="nav-link" style={{ color: '#024E82' }}>
+          Home
+        </a>
+        <a href="#" className="nav-link" style={{ color: 'black' }}>
+          About
+        </a>
+        <a href="#" className="nav-link" style={{ color: 'black' }}>
+          Contact Us
+        </a>
+      </div>
+      <div className="right-section">
+        <button className="nav-btn">Cart</button>
+        <button className="nav-btn">User</button>
+        <div className="menu-icon">&#9776;</div>
+      </div>
+    </nav>
+  );
 };
 
 export default Header;
