@@ -1,45 +1,53 @@
-/* Custom styles for the navbar and its elements */
-
-.navbar {
-    background-color: #000; /* Black background */
-}
-
-.navbar-brand img {
-    max-width: 100%;
-    height: auto; /* Ensures the image scales correctly */
-}
-
-.navDirection {
-    justify-content: flex-start; /* Aligns nav items to the left */
-}
-
-.nav-link {
-    color: #fff !important; /* White text */
-    margin-right: 15px; /* Right margin for spacing */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-
-.nav-link:hover {
-    color: #17a2b8 !important; /* Change color on hover */
-}
-
-.btn-outline-info {
-    color: #17a2b8; /* Button text color */
-    border-color: #17a2b8; /* Button border color */
-}
-
-.btn-outline-info:hover {
-    color: #fff; /* Text color on hover */
-    background-color: #17a2b8; /* Button background color on hover */
-    border-color: #17a2b8; /* Button border color on hover */
-}
-
-/* Responsive adjustments as needed */
-@media (max-width: 992px) {
-    .navbar-nav {
-        margin-top: 20px;
+/* header.css */
+.custom-navbar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+  }
+  
+  .company-name {
+    color: #1D1D1D;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: #1D1D1D;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  
+  .cart-icon {
+    margin-left: 20px;
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #1D1D1D;
+    margin-right: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu-icon {
+      margin-right: 0;
     }
-}
-.brdr{
-    border-radius: 100px;
-}
+    .navbar-nav {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    .nav-link {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  

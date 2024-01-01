@@ -1,64 +1,124 @@
-import BannerZero from "../assets/images/banner-0.png";
-import BannerOne from "../assets/images/banner-1.jpg";
-import BannerTwo from "../assets/images/banner-2.jpg";
+import React, { useState, useEffect } from 'react';
+import { Card, Button, Row, Col, Modal, Form } from 'react-bootstrap';
+import './home.css';
+import Services from './Services'; 
+import TopSellers from './TopSellers';
+
+function Home({ setCartItems }) {
+    const [products, setProducts] = useState([]);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1);
+    const [color, setColor] = useState('Red');
+    const [size, setSize] = useState('Small');
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+            .catch(error => console.error('Error:', error));
+    }, []);
+
+    const handleShowModal = (product) => {
+        setSelectedProduct(product);
+        setQuantity(1);
+        setColor('Red');
+        setSize('Small');
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
+    const incrementQuantity = () => {
+        setQuantity(prevQuantity => prevQuantity + 1);
+    };
+
+    const decrementQuantity = () => {
+        setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+    };
+
+    const handleAddToCart = () => {
+        const newItem = {
+            id: selectedProduct.id,
+            title: selectedProduct.title,
+            image: selectedProduct.image,
+            quantity,
+            color,
+            size
+        };
+        setCartItems(currentItems => [...currentItems, newItem]);
+        setShowModal(false);
+    };
 
 
-function BannerIncidator(props) {
     return (
-        <button
-            type="button"
-            data-bs-target="#bannerIndicators"
-            data-bs-slide-to={props.index}
-            className={props.active ? "active" : ""}
-            aria-current={props.active}
-        />
-    );
-}
+        <div className="container">
+            <Row className="mt-4 g-4">
+                {products.map(product => (
+                    <Col sm={12} md={6} lg={4} xl={3} key={product.id}>
+                        <Card className="h-100 product-card">
+                            <Card.Img variant="top" src={product.image} className="product-img" />
+                            <Card.Body>
+                                <Card.Title>{product.title}</Card.Title>
+                                <Card.Text className="product-description">
+                                    {product.description}
+                                </Card.Text>
+                                <h2> shirt</h2><br/>
+                                <h2> $29.0</h2>
+                                <Button variant="dark" onClick={() => handleShowModal(product)}>Add to Cart</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
 
-function BannerImage(props) {
-    return (
-        <div
-            className={"carousel-item " + (props.active ? "active" : "")}
-            data-bs-interval="5000"
-        >
-            <div
-                className="ratio"
-                style={{ "--bs-aspect-ratio": "50%", maxHeight: "460px" }}
-            >
-                <img
-                    className="d-block w-100 h-100 bg-dark cover"
-                    alt=""
-                    src={props.image}
-                />
-            </div>
-            <div className="carousel-caption d-none d-lg-block">
-                <h5>Banner Header</h5>
-                <p>Some representative placeholder content for the banner.</p>
-            </div>
+            {selectedProduct && (
+                <Modal show={showModal} onHide={handleCloseModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{selectedProduct.title}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Quantity</Form.Label>
+                                <div className="quantity-controls">
+                                    <Button variant="secondary" onClick={decrementQuantity}>-</Button>
+                                    <span className="quantity-value">{quantity}</span>
+                                    <Button variant="secondary" onClick={incrementQuantity}>+</Button>
+                                </div>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Color</Form.Label>
+                                <Form.Control as="select" value={color} onChange={e => setColor(e.target.value)}>
+                                    <option>Red</option>
+                                    <option>Blue</option>
+                                    <option>Green</option>
+                                </Form.Control>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Size</Form.Label>
+                                <Form.Control as="select" value={size} onChange={e => setSize(e.target.value)}>
+                                    <option>Small</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                </Form.Control>
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleCloseModal}>Close</Button>
+                        <Button variant="primary" onClick={handleAddToCart}>Add to Cart</Button>
+                    </Modal.Footer>
+                </Modal>
+            )}
+            <Services /> {/* Include Services component */}
+            <TopSellers />
         </div>
+        
     );
+
 }
 
-function Banner() {
-    return (
-        <div
-            id="bannerIndicators"
-            className="carousel slide"
-            data-bs-ride="carousel"
-            style={{ marginTop: "56px" }}
-        >
-            <div className="carousel-indicators">
-                <BannerIncidator index="0" active={true} />
-                <BannerIncidator index="1" />
-                <BannerIncidator index="2" />
-            </div>
-            <div className="carousel-inner">
-                <BannerImage image={BannerZero} active={true} />
-                <BannerImage image={BannerOne} />
-                <BannerImage image={BannerTwo} />
-            </div>
-        </div>
-    );
-}
-
-export default Banner;
+export default Home;

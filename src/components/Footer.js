@@ -45,9 +45,7 @@ const Footer = () => {
                     <Col sm={12} md={6} lg={3}>
                         <h5>Get In The Know</h5>
                         <ListGroup horizontal>
-                            <ListGroup.Item className="bg-dark border-0">
-                                <Email className="text-white" size={24} />
-                            </ListGroup.Item>
+                            
                             <ListGroup.Item className="bg-dark border-0">
                                 <Twitter className="text-white" size={24} />
                             </ListGroup.Item>

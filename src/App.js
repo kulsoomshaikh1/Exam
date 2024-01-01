@@ -4,10 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
-import Product from './pages/Product';
-import Contact from './pages/Contact';
+import Services from './pages/Services';
 import Cart from "./pages/Cart";
+import TopSellers from './pages/TopSellers';
 
 const App = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -27,9 +26,9 @@ const App = () => {
             <Header cartItemCount={totalCartItemCount} />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/product" element={<Product setCartItems={setCartItems} />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/Home" element={<Home setCartItems={setCartItems} />} />
+                <Route path="/TopSellers" element={<TopSellers setCartItems={setCartItems} />} />
+                <Route path="/Services" element={<Services />} />
                 <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} editCartItem={editCartItem} />} />
             </Routes>
           
