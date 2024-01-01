@@ -34,7 +34,7 @@ const About = () => {
                         <Card.Body>
                             <Card.Title>kulsoom shaikh </Card.Title>
                             <Card.Text>
-                              The full stake enterprise application developer
+                              The full stake enterprise applications developer
                             </Card.Text>
                         </Card.Body>
                     </Card>
