@@ -1,27 +1,25 @@
-// Navbar.js
 import React from 'react';
-import './header.css';
+import './header.css'; // Import the CSS file
 import { Header } from 'react-bootstrap/lib/Modal';
 
-const header = () => {
+const Header = () => {
   return (
     <nav className="navbar">
-      <div className="left-section">
-        <span className="company-name">Grace</span>
-        <a href="#" className="nav-link" style={{ color: '#024E82' }}>
-          Home
-        </a>
-        <a href="#" className="nav-link" style={{ color: 'black' }}>
-          About
-        </a>
-        <a href="#" className="nav-link" style={{ color: 'black' }}>
-          Contact Us
+      <div>
+        <a href="#" className="company-name">
+          Grace Company
         </a>
       </div>
-      <div className="right-section">
-        <button className="nav-btn">Cart</button>
-        <button className="nav-btn">User</button>
-        <div className="menu-icon">&#9776;</div>
+      <div>
+        <a href="#" className="nav-link home-link">
+          Home
+        </a>
+        <a href="#" className="nav-link">
+          About
+        </a>
+        <a href="#" className="nav-link">
+          Contact Us
+        </a>
       </div>
     </nav>
   );
